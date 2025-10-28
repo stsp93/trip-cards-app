@@ -1,6 +1,14 @@
-.trip-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+@import '../../styles/variables.scss';
+
+.trips {
+  background-image: $background-gradient;
+  .trip-list {
+    max-width: 128rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
 }

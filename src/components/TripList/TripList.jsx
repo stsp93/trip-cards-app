@@ -15,11 +15,14 @@ const TripList = () => {
     }, []);
 
   return (
-    <ul className="trip-list">
-      {trips.map((trip) => (
-        <TripCard key={trip.id} trip={trip} />
-      ))}
-    </ul>
+    <article className="trips">
+      <ul className="trip-list">
+        {trips.map((trip) => (
+          <TripCard key={trip.id} trip={trip} />
+        ))}
+      </ul>
+    </article>
+    
   );
 };
 

@@ -2,7 +2,7 @@ $breakpoints: (
   mobile: 480px,
   tablet: 768px,
   desktop: 1024px,
-  large: 1200px
+  large: 1200px,
 );
 
 @mixin mobile {
@@ -33,5 +33,15 @@ $breakpoints: (
   @return map-get($breakpoints, $name);
 }
 
+// Colors
 $white: #fff;
 $gray: #666;
+$purple: #d77a61;
+$orange: #d8b4a0;
+
+$background-gradient: linear-gradient(
+  45deg,
+  $orange 0%,
+  $purple 100%
+);
+
