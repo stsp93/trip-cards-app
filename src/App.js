@@ -1,9 +1,18 @@
+import Header from './components/Header/Header';
+import TripList from './components/TripList/TripList';
+import Footer from './components/Footer/Footer';
+import ModalProvider from './components/ModalProvider/ModalProvider';
+
 function App() {
-  return (
-    <div className="App">
-      <h1>Trip Card Explorer</h1>
-    </div>
-  );
+	return (
+		<ModalProvider>
+			<Header />
+			<main>
+				<TripList />
+			</main>
+			<Footer />
+		</ModalProvider>
+	);
 }
 
 export default App;
