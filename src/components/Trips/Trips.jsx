@@ -1,11 +1,12 @@
-import "./TripList.scss";
+import "./Trips.scss";
 
-import TripCard from "./TripCard/TripCard";
 import { useEffect, useState } from "react";
 import { getTripsData } from "../../services/dataService.js";
 import ShowMoreButton from "./ShowMoreButton/ShowMoreButton.jsx";
+import TripList from "./TripList/TripList.jsx";
+import SearchBar from "./SearchBar/SearchBar.jsx";
 
-const TripList = () => {
+const Trips = () => {
     const [allTrips, setAllTrips] = useState([]);
     const [visibleCount, setVisibleCount] = useState(8);
     const [loadingMore, setLoadingMore] = useState(false);
@@ -21,7 +22,7 @@ const TripList = () => {
         setLoadingMore(true);
         
         // Simulate loading delay
-        await new Promise(resolve => setTimeout(resolve, 8000));
+        await new Promise(resolve => setTimeout(resolve, 800));
         
         setVisibleCount(prev => prev + 8);
         setLoadingMore(false);
@@ -29,19 +30,14 @@ const TripList = () => {
 
     const visibleTrips = allTrips.slice(0, visibleCount);
     const hasMoreTrips = visibleCount < allTrips.length;
-
   return (
     <article className="trips">
-      <ul className="trip-list">
-        {visibleTrips.map((trip) => (
-          <TripCard key={trip.id} trip={trip} />
-        ))}
-      </ul>
-      
+      <TripList trips={visibleTrips} />
       {hasMoreTrips && (
         <ShowMoreButton 
           onClick={showMoreTrips} 
           loading={loadingMore}
+          remainingCount={allTrips.length - visibleCount}
         />
       )}
     </article>
@@ -49,4 +45,4 @@ const TripList = () => {
   );
 };
 
-export default TripList;
+export default Trips;

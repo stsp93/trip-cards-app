@@ -1,8 +1,5 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
-.trips {
-    min-height: calc(100vh - 11rem);
-  background-image: $background-gradient;
   .trip-list {
     max-width: 128rem;
     margin: 0 auto;
@@ -12,4 +9,3 @@
     gap: 1rem;
     padding: 1rem;
   }
-}

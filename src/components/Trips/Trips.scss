@@ -1,0 +1,6 @@
+@import '../../styles/variables.scss';
+
+.trips {
+    min-height: calc(100vh - 11rem);
+  background-image: $background-gradient;
+}
