@@ -1,39 +1,63 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .trip-card {
   display: flex;
   flex-direction: column;
-
-  max-height: 20rem;
-  max-width: 30rem;
+  height: 30rem;
   border-radius: 0.8rem;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   background-color: #000;
 
-  &:hover {
-    transform: scale(1.02);
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-  }
-
   .trip-card__image {
     width: 100%;
-    height: 15rem;
+    height: 100%;
     object-fit: cover;
   }
+  .trip-card__info {
+    position: absolute;
+    bottom: 0rem;
+    color: $white;
+    text-align: center;
+    font-family: $main-font;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.5rem;
+    .trip-card__title {
+      margin-bottom: 0.5rem;
+    }
+  }
 
-  .trip-card__title {
+  .trip-card__button {
     position: absolute;
     font-family: $main-font;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: $white;
-    bottom: 0rem;
-    padding: 0.5rem;
-    text-align: center;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  .rating-wrapper {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
     background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
+    border-radius: 0.8rem;
   }
 }
