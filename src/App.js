@@ -1,3 +1,5 @@
+import './styles/index.scss';
+
 import Header from './components/Header/Header';
 import TripList from './components/TripList/TripList';
 import Footer from './components/Footer/Footer';
