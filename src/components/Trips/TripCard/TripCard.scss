@@ -63,8 +63,8 @@
 }
 
 .highlight {
-  background-color: yellow;
-  color: $black;
+  background-color: var(--highlight-bg);
+  color: var(--highlight-text);
   font-weight: bold;
   padding: 0.1rem 0.2rem;
   border-radius: 0.2rem;

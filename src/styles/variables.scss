@@ -45,6 +45,8 @@ $black: #000;
 $gray: #666;
 $purple: #d77a61;
 $orange: #d8b4a0;
+$blue: #223843;
+$dark-blue: #1a1a2e;
 
 $background-gradient: linear-gradient(
   45deg,
@@ -52,4 +54,30 @@ $background-gradient: linear-gradient(
   $purple 100%
 );
 $border: 2px solid rgba(255, 255, 255, 0.1);
+
+// CSS Custom Properties for theming
+:root {
+  --bg-primary: #{$orange};
+  --bg-secondary: #{$purple};
+  --bg-gradient: linear-gradient(45deg, #{$orange} 0%, #{$purple} 100%);
+  --text-primary: #{$white};
+  --text-secondary: #{$gray};
+  --card-bg: #{$white};
+  --border-color: rgba(255, 255, 255, 0.1);
+  --highlight-bg: yellow;
+  --highlight-text: #{$gray};
+}
+
+// Dark theme
+[data-theme="dark"] {
+  --bg-primary: #{$blue};
+  --bg-secondary: #{$dark-blue};
+  --bg-gradient: linear-gradient(45deg, #{$dark-blue} 0%, #{$blue} 100%);
+  --text-primary: #{$white};
+  --text-secondary: #e0e0e0;
+  --card-bg: #2d2d44;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --highlight-bg: #ffd700;
+  --highlight-text: #{$gray};
+}
 

@@ -2,7 +2,7 @@
 
 .trips {
     min-height: calc(100vh - 11rem);
-  background-image: $background-gradient;
+  background-image: var(--bg-gradient);
   
   .loading-spinner-container {
     display: flex;

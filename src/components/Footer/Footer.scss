@@ -4,5 +4,6 @@
     text-align: center;
     padding: 1rem;
     font-family: $main-font;
-    background-color: $orange;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
