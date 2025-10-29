@@ -13,10 +13,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
-  &:hover:not(&--loading) {
-    transform: translateY(-2px);
-  }
+  position: relative;
+  overflow: hidden;
   
   &--loading {
     opacity: 0.7;
@@ -31,6 +29,23 @@
     border-top: 2px solid white;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+  }
+  
+  &:active::before {
+    width: 100rem;
+    height: 100rem;
   }
 }
 
