@@ -1,47 +1,4 @@
-@import "../../../styles/variables.scss";
-
 .show-more-container {
   text-align: center;
   padding: 2rem;
-}
-
-.show-more-btn {
-  border: $border;
-  
-  color: white;
-  font-family: $main-font;
-  padding: 1rem 2rem;
-  border-radius: 0.8rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover,&:hover:not(.loading) {
-    transform: translateY(-2px);
-  }
-
-  &.loading {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-
-  .spinner {
-    display: inline-block;
-    width: 1.6rem;
-    height: 1.6rem;
-    border: $border;
-    border-top: 2px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 }

@@ -1,19 +1,17 @@
+import Button from "../../shared/Button/Button";
 import "./ShowMoreButton.scss";
 
 const ShowMoreButton = ({ onClick, loading }) => {
   return (
     <div className="show-more-container">
-      <button 
-        className={`show-more-btn ${loading ? 'loading' : ''}`}
+      <Button
+        variant="primary"
         onClick={onClick}
-        disabled={loading}
+        loading={loading}
+        className="show-more-btn"
       >
-        {loading ? (
-            <span className="spinner"></span>
-        ) : (
-          'Show More'
-        )}
-      </button>
+        Show More
+      </Button>
     </div>
   );
 };

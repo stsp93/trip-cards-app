@@ -1,3 +1,4 @@
+import Button from "../../../shared/Button/Button";
 import "./SortToggle.scss";
 
 const SortToggle = ({ sortBy, onSortChange, isLoading }) => {
@@ -8,17 +9,21 @@ const SortToggle = ({ sortBy, onSortChange, isLoading }) => {
     onSortChange(newSortBy);
   };
 
+  const buttonText = sortBy == null 
+    ? 'Sort by Rating' 
+    : sortBy === 'asc' 
+      ? 'Rating ↓' 
+      : 'Rating ↑';
+
   return (
     <div className="sort-toggle">
-      <button 
-        className='sort-toggle__button'
+      <Button
+        variant="secondary"
         onClick={handleSort}
-        disabled={isLoading}
+        className="sort-toggle__button"
       >
-        <span className="sort-toggle__text">
-          {sortBy == null ? 'Sort by Rating' : sortBy === 'asc' ? 'Rating ↓' : 'Rating ↑'}
-        </span>
-      </button>
+        {buttonText}
+      </Button>
     </div>
   );
 };
