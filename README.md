@@ -16,8 +16,11 @@ npm start
 - SASS with rem units and BEM naming
 - Context API for modals (avoid prop drilling)
 - Component structure: FilterControls + TripCard + Modal
+- Search through both trip name and description, highlighting the term
+- Using Shared button component with a ripple effect
+- Light/Dark theme Toggle 
 
 ## Trade-offs
 
-- Used static JSON instead of API (simplicity)
+- Used static JSON instead of API
 - Used Basic React state vs better state management
