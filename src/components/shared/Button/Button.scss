@@ -1,11 +1,9 @@
-@import '../../../styles/variables.scss';
-
 .btn {
-  border: $border;
-  color: $white;
-  font-family: $main-font;
+  border: var(--border-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
   padding: 1rem 2rem;
-  border-radius: 0.8rem;
+  border-radius: 3rem;
   font-size: 1.6rem;
   font-weight: 500;
   cursor: pointer;
@@ -26,8 +24,8 @@
     display: inline-block;
     width: 1.6rem;
     height: 1.6rem;
-    border: $border;
-    border-top: 2px solid white;
+    border: var(--border-primary);
+    border-top: 2px solid var(--text-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }

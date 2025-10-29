@@ -1,11 +1,9 @@
-@import '../../styles/variables';
-
 .header {
   text-align: center;
   padding: 1rem;
-  color: #fff;
+  color: var(--text-primary);
   background-color: var(--bg-secondary);
-  font-family: $header-font;
+  font-family: var(--header-font);
   font-size: 2rem;
   letter-spacing: 1rem;
 }

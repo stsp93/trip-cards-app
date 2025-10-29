@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import "./ModalProvider.scss";
+import Button from "../shared/Button/Button";
 
 const ModalContext = createContext();
 
@@ -41,9 +42,7 @@ const ModalProvider = ({ children }) => {
       {isOpen && selectedTrip && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeModal}>
-              ✕
-            </button>
+            <Button className="close-btn" onClick={closeModal}>✕</Button>
             
             <div className="modal-image">
               <img src={selectedTrip.image} alt={selectedTrip.name} />

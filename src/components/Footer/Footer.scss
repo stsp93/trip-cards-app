@@ -1,9 +1,7 @@
-@import '../../styles/variables.scss';
-
 .footer {
     text-align: center;
     padding: 1rem;
-    font-family: $main-font;
+    font-family: var(--font-main);
     background-color: var(--bg-primary);
     color: var(--text-primary);
 }
