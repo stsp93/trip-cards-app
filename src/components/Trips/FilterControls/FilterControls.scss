@@ -1,0 +1,11 @@
+@import '../../../styles/variables.scss';
+
+.filter-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: center;
+  background-image: $background-gradient;
+}

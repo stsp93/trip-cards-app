@@ -17,8 +17,13 @@ export const filterTripsByName = (trips, searchTerm) => {
   );
 };
 
-export const sortTripsByRating = (trips) => {
-  return [...trips].sort((a, b) => b.rating - a.rating);
+export const sortTripsByRating = (trips, sortBy) => {
+  return [...trips].sort((a, b) => {
+    if (sortBy === 'asc') {
+      return a.rating - b.rating;
+    }
+    return b.rating - a.rating;
+  });
 };
 
 // Simulates a loading delay, set to 0 for no delay

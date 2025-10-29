@@ -1,10 +1,10 @@
 import "./Trips.scss";
 
 import { useEffect, useState } from "react";
-import { getTripsData, filterTripsByName, simulateLoadingDelay } from "../../services/dataService.js";
+import { getTripsData, filterTripsByName, sortTripsByRating, simulateLoadingDelay } from "../../services/dataService.js";
 import ShowMoreButton from "./ShowMoreButton/ShowMoreButton.jsx";
 import TripList from "./TripList/TripList.jsx";
-import SearchBar from "./SearchBar/SearchBar.jsx";
+import FilterControls from "./FilterControls/FilterControls.jsx";
 
 const MAX_VISIBLE_TRIPS = 6;
 
@@ -12,6 +12,7 @@ const Trips = () => {
   const [allTrips, setAllTrips] = useState([]);
   const [filteredTrips, setFilteredTrips] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState(null);
   const [visibleCount, setVisibleCount] = useState(MAX_VISIBLE_TRIPS);
   const [loadingMore, setLoadingMore] = useState(false);
   const [loadingFilter, setLoadingFilter] = useState(false);
@@ -26,17 +27,23 @@ const Trips = () => {
 
   useEffect(() => {
     (async () => {
+      if (allTrips.length === 0) return;
       
       setLoadingFilter(true);
       
       await simulateLoadingDelay();
       
-      const filtered = filterTripsByName(allTrips, searchTerm);
-      setFilteredTrips(filtered);
+      let processed = filterTripsByName(allTrips, searchTerm);
+      
+      if (sortBy) {
+        processed = sortTripsByRating(processed, sortBy);
+      }
+      
+      setFilteredTrips(processed);
       setVisibleCount(MAX_VISIBLE_TRIPS);
       setLoadingFilter(false);
     })();
-  }, [allTrips, searchTerm]);
+  }, [allTrips, searchTerm, sortBy]);
 
   const handleSearchChange = (term) => {
     setSearchTerm(term);
@@ -55,10 +62,12 @@ const Trips = () => {
   const hasMoreTrips = visibleCount < filteredTrips.length;
   return (
     <article className="trips">
-      <SearchBar 
+      <FilterControls
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
-        placeholder="Search trips by name..."
+        sortBy={sortBy}
+        onSortChange={setSortBy}
+        isLoading={loadingFilter}
       />
       
       {loadingFilter ? (
