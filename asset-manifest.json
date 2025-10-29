@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/trip-cards-app/static/css/main.1de5eaa2.css",
-    "main.js": "/trip-cards-app/static/js/main.1d1ecb4b.js",
+    "main.css": "/trip-cards-app/static/css/main.c3da38fc.css",
+    "main.js": "/trip-cards-app/static/js/main.5e3ec19e.js",
     "static/js/774.90d443a4.chunk.js": "/trip-cards-app/static/js/774.90d443a4.chunk.js",
     "static/js/453.5d97a441.chunk.js": "/trip-cards-app/static/js/453.5d97a441.chunk.js",
     "index.html": "/trip-cards-app/index.html",
-    "main.1de5eaa2.css.map": "/trip-cards-app/static/css/main.1de5eaa2.css.map",
-    "main.1d1ecb4b.js.map": "/trip-cards-app/static/js/main.1d1ecb4b.js.map",
+    "main.c3da38fc.css.map": "/trip-cards-app/static/css/main.c3da38fc.css.map",
+    "main.5e3ec19e.js.map": "/trip-cards-app/static/js/main.5e3ec19e.js.map",
     "453.5d97a441.chunk.js.map": "/trip-cards-app/static/js/453.5d97a441.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1de5eaa2.css",
-    "static/js/main.1d1ecb4b.js"
+    "static/css/main.c3da38fc.css",
+    "static/js/main.5e3ec19e.js"
   ]
 }
