@@ -1,6 +1,7 @@
 import "./TripCard.scss";
 import { useModal } from "../../ModalProvider/ModalProvider.jsx";
 import Button from "../../shared/Button/Button.jsx";
+import { handleImgError } from "../../../helpers/helpers.js";
 
 const TripCard = (props) => {
   const { openModal } = useModal();
@@ -30,13 +31,14 @@ const TripCard = (props) => {
     );
   };
 
+
   return (
     <li className="trip-card">
       <div className="rating-wrapper">
         {stars}
       </div>
         <Button className="trip-card__button" onClick={handleMoreInfo}>More Info</Button>
-        <img className="trip-card__image" src={props.trip.image} alt={props.trip.name} />
+        <img className="trip-card__image" src={props.trip.image} alt={props.trip.name} onError={handleImgError} />
         <div className="trip-card__info">
         <h2 className="trip-card__title">{highlightText(props.trip.name, props.searchTerm)}</h2>
           <p className="trip-card__description">{highlightText(props.trip.description, props.searchTerm)}</p>

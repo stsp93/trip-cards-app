@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import "./ModalProvider.scss";
 import Button from "../shared/Button/Button";
+import { handleImgError } from "../../helpers/helpers";
 
 const ModalContext = createContext();
 
@@ -45,7 +46,7 @@ const ModalProvider = ({ children }) => {
             <Button className="close-btn" onClick={closeModal}>✕</Button>
             
             <div className="modal-image">
-              <img src={selectedTrip.image} alt={selectedTrip.name} />
+              <img src={selectedTrip.image} alt={selectedTrip.name} onError={handleImgError} />
             </div>
             
             <div className="modal-body">
