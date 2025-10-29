@@ -1,6 +1,13 @@
 .trips {
     min-height: calc(100vh - 11rem);
   background-image: var(--bg-gradient);
+
+  .no-trips-message {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    padding: 2rem;
+  }
   
   .loading-spinner-container {
     display: flex;

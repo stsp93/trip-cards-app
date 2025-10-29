@@ -5,6 +5,7 @@ import { getTripsData, searchTripByTerm, sortTripsByRating, simulateLoadingDelay
 import ShowMoreButton from "./ShowMoreButton/ShowMoreButton.jsx";
 import TripList from "./TripList/TripList.jsx";
 import FilterControls from "./FilterControls/FilterControls.jsx";
+import Button from "../shared/Button/Button.jsx";
 
 const MAX_VISIBLE_TRIPS = 6;
 
@@ -83,6 +84,9 @@ const Trips = () => {
               loading={loadingMore}
               remainingCount={filteredTrips.length - visibleCount}
             />
+          )}
+          {!filteredTrips.length && (
+            <p className="no-trips-message">No trips found. 😕</p>
           )}
         </>
       )}
