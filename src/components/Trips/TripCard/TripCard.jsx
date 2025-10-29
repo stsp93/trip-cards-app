@@ -14,6 +14,21 @@ const TripCard = (props) => {
     openModal(props.trip);
   };
 
+  const highlightText = (text, searchTerm) => {
+    if (!searchTerm) return text;
+    
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    const parts = text.split(regex);
+    
+    return parts.map((part, index) => 
+      regex.test(part) ? (
+        <span key={index} className="highlight">{part}</span>
+      ) : (
+        part
+      )
+    );
+  };
+
   return (
     <li className="trip-card">
       <div className="rating-wrapper">
@@ -22,8 +37,8 @@ const TripCard = (props) => {
         <button className="trip-card__button" onClick={handleMoreInfo}>More Info</button>
         <img className="trip-card__image" src={props.trip.image} alt={props.trip.name} />
         <div className="trip-card__info">
-        <h2 className="trip-card__title">{props.trip.name}</h2>
-          <p className="trip-card__description">{props.trip.description}</p>
+        <h2 className="trip-card__title">{highlightText(props.trip.name, props.searchTerm)}</h2>
+          <p className="trip-card__description">{highlightText(props.trip.description, props.searchTerm)}</p>
         </div>
     </li>
   );

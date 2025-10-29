@@ -10,10 +10,11 @@ export const getTripsData = async () => {
   }
 };
 
-export const filterTripsByName = (trips, searchTerm) => {
+export const searchTripByTerm = (trips, searchTerm) => {
   if (!searchTerm) return trips;
   return trips.filter(trip => 
-    trip.name.toLowerCase().includes(searchTerm.toLowerCase())
+    trip.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    trip.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 };
 

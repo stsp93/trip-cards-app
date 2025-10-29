@@ -1,7 +1,7 @@
 import "./Trips.scss";
 
 import { useEffect, useState } from "react";
-import { getTripsData, filterTripsByName, sortTripsByRating, simulateLoadingDelay } from "../../services/dataService.js";
+import { getTripsData, searchTripByTerm, sortTripsByRating, simulateLoadingDelay } from "../../services/dataService.js";
 import ShowMoreButton from "./ShowMoreButton/ShowMoreButton.jsx";
 import TripList from "./TripList/TripList.jsx";
 import FilterControls from "./FilterControls/FilterControls.jsx";
@@ -33,7 +33,7 @@ const Trips = () => {
       
       await simulateLoadingDelay();
       
-      let processed = filterTripsByName(allTrips, searchTerm);
+      let processed = searchTripByTerm(allTrips, searchTerm);
       
       if (sortBy) {
         processed = sortTripsByRating(processed, sortBy);
@@ -76,7 +76,7 @@ const Trips = () => {
         </div>
       ) : (
         <>
-          <TripList trips={visibleTrips} />
+          <TripList trips={visibleTrips} searchTerm={searchTerm} />
           {hasMoreTrips && (
             <ShowMoreButton
               onClick={showMoreTrips}
